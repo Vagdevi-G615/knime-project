@@ -1,52 +1,64 @@
-# 🌾 Smart Farming: Crop Recommendation Using Machine Learning (KNIME Workflow)
+#  KNIME Workflow Collection
 
-## 📌 Project Overview
-This project focuses on developing a crop recommendation system using environmental and soil features such as nitrogen (N), phosphorus (P), potassium (K), temperature, humidity, pH, and rainfall. Multiple machine learning models were trained and compared to identify the most suitable crop based on the given conditions.
+This repository contains a set of KNIME Analytics Platform workflows for different real-world data science use cases.
 
-## 📁 Dataset
-- Source: Kaggle – [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
-- Features:
-  - `N`, `P`, `K` – Soil macronutrients
-  - `Temperature`, `Humidity` – Weather conditions
-  - `pH`, `Rainfall` – Soil chemistry and climate
-  - `label` – Target crop class (multi-class classification)
 
-## 🧰 Tools & Environment
-- **KNIME Analytics Platform**
-- Built-in Learner/Predictor Nodes:
-  - Random Forest
-  - Naive Bayes
-  - Decision Tree
-  - k-Nearest Neighbors (KNN)
-- **WEKA Integration**:
-  - MultiClassClassifier using Weka Predictor
+## 📁 Workflow List
 
-## 🔗 Workflow Highlights
-- **Missing Value Handling**: Most Frequent / Mean / Median
-- **Normalization**: Min-Max Scaling
-- **Partitioning**: Stratified 80% train / 20% test
-- **Prediction Comparison**: Scorer node for evaluation
+### 1. 🔤 Chat_Completion.knwf
+**Description**:  
+Implements a text generation pipeline similar to chat-based completions using NLP nodes and possibly integrated with LLM APIs.  
+**Use Case**: Language generation, chatbots, or prompt engineering experimentation.  
+**Highlights**:
+- Tokenization and text vectorization  
+- Optional integration with GPT APIs  
+- Sentiment or intent tagging
 
-## 🤖 Model Comparison Results
+---
 
-| Model                  | Accuracy     |
-|------------------------|--------------|
-| 🔍 K-Nearest Neighbors (KNN)        | **97.50%**     |
-| 🌲 Random Forest                    | **99.545%**    |
-| 🧮 Naive Bayes                      | **99.545%**    |
-| 🌳 Decision Tree                    | **97.50%**     |
-| 🎯 MultiClassClassifier (Weka)      | **95.227%**    |
+### 2. 🌾 Crop Recommendation.knwf
+**Description**:  
+A machine learning-based system to recommend the most suitable crop based on soil and weather parameters.  
+**Use Case**: Agricultural decision support for farmers.  
+**Highlights**:
+- Input: Nitrogen, Phosphorous, Potassium, temperature, humidity, pH, rainfall  
+- Output: Recommended crop  
+- Models used: Decision Tree, Random Forest  
+- Evaluation: Confusion matrix, accuracy, precision
 
-> 🔬 Random Forest and Naive Bayes performed the best, achieving nearly 99.5% accuracy.
+---
 
-## 📦 Output Files
-- Evaluation metrics from `Scorer` 
+### 3. 🧬 Melanoma Cancer Detection using CNN.knwf
+**Description**:  
+Classifies dermoscopic skin lesion images into malignant or benign using a Convolutional Neural Network.  
+**Use Case**: Early skin cancer detection from image data.  
+**Highlights**:
+- Image preprocessing and augmentation  
+- CNN architecture built with KNIME + TensorFlow integration  
+- Training and validation pipeline  
+- Accuracy and loss visualization
 
-## 📈 Future Enhancements
-- Deploy this model using **KNIME WebPortal** or **Streamlit**
-- Integrate with **real-time weather APIs**
-- Add **geolocation-based crop filtering**
-- Explainable AI using **LIME** or **SHAP** nodes
+
+## 🛠 Requirements
+- KNIME Analytics Platform (version 4.7 or above recommended)  
+- Python Integration (for CNN)  
+- TensorFlow installed (for Melanoma workflow)  
+- Internet (if external APIs are used in Chat Completion)
+
+
+##  How to Use
+1. Clone this repository or download the workflows.
+2. Open KNIME.
+3. Import the `.knwf` files via `File > Import KNIME Workflow`.
+4. Configure necessary paths and Python/TensorFlow environment if needed.
+5. Execute the workflows node by node or run them entirely.
 
 ## 📄 License
-This project is for academic and research purposes. Dataset © Kaggle contributors.
+This project is open-source and available under the [MIT License](LICENSE).
+
+
+## 🤝 Contributions
+Feel free to submit pull requests or open issues for enhancements or bugs.
+
+
+
